@@ -2,12 +2,13 @@ import React from 'react';
 import { EVENT_TYPES } from '../../../constants';
 import { getNoteName } from '../../../utils';
 import BaseComponent from '../../base';
+import Keyboard from '../../molecules/Keyboard';
 
 export default class MIDIController extends BaseComponent {
 
   static propTypes = {
     actions: React.PropTypes.object,
-    keys: React.PropTypes.array
+    pressedKeys: React.PropTypes.array
   }
 
   state = {
@@ -68,7 +69,7 @@ export default class MIDIController extends BaseComponent {
     let notFoundMessage = this.state.isDevicesNotFound
       ? <div>No devices found.</div> : null;
 
-    let pressedKyes = this.props.keys.map((element, index) => {
+    let pressedKyes = this.props.pressedKeys.map((element, index) => {
       return (
         <span key={index}>{ `${getNoteName(element)}(${element}) ` }</span>
       );
@@ -76,6 +77,8 @@ export default class MIDIController extends BaseComponent {
 
     return (
       <div>
+        <Keyboard
+          pressedKeys={ this.props.pressedKeys }/>
         { pressedKyes }
         { notFoundMessage }
       </div>

@@ -4,8 +4,9 @@ import { Provider } from 'react-redux';
 import { Router, Route, browserHistory} from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import configureStore from './configureStore';
-
 import Landing from './containers/Landing';
+import defaultCSS from './styles/default.css';
+import commonCSS from './styles/common.css';
 
 const store = configureStore(browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);

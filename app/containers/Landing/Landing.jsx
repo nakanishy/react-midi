@@ -19,7 +19,7 @@ export class Landing extends BaseComponent {
       <div>
         <MIDIController 
           actions={ this.props.actions }
-          keys={ this.props.keyboard.pressedKeys } />
+          pressedKeys={ this.props.keyboard.pressedKeys } />
       </div>
     );
   }

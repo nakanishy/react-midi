@@ -1,4 +1,15 @@
-import { NOTES } from '../constants';
+import { NOTES, BLACK_KEYS } from '../constants';
+
+/**
+ * 
+ *
+ * @param {number} key
+ */
+export function isBlackKey(key) {
+  let note = key % 12;
+  return BLACK_KEYS.indexOf(note) > -1;
+}
+
 
 /**
  * Get a note name from a key number

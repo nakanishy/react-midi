@@ -1,0 +1,44 @@
+:local {
+  .keyboard {
+    padding: 10px;
+  }
+
+  .keys {
+    display: flex;
+  }
+
+  .key {
+    flex: 0 0 auto;
+    border-radius: 2px;
+  }
+
+  .pressed-key {
+    composes: key;
+    background-color: #A9D3EE !important;
+  }
+
+  .white-key {
+    composes: key;
+    width: 14px;
+    height: 60px;
+    background-color: white;
+    border-top: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
+    border-left: 1px solid #bbb;
+  }
+
+  .black-key {
+    composes: key;
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: -4.5px;
+      width: 9px;
+      height: 40px;
+      background-color: black;
+      border-radius: 2px;
+    }
+  }
+}

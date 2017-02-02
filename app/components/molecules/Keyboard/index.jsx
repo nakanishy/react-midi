@@ -21,7 +21,7 @@ export default class Keyboard extends BaseComponent {
         const pressedKeyClass = classNames(keyTypeStyle, styles['pressed-key']);
         return (
           <div key={ index } className={ styles.bar }>
-            <div className={ class } />
+            <div className={ pressedKeyClass } />
           </div>
         );
       }
